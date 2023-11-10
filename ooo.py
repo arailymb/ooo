@@ -122,3 +122,36 @@ students = {student['name']: {key: value for key, value in student.items() if ke
 
 print(students)
 
+#task_3_1
+# Sample input transactions
+transactions = [(1001, 2), (1001, 1), (1003, 2), (1005, 2), (1001, 3), (1007, 1), (1007, 2), (1100, 2), (1003, 2), (1001, 1)]
+
+# Initialize a dictionary to store user statistics
+stats = {}
+
+# Iterate through the transactions
+for user, transaction in transactions:
+    if str(user) not in stats:
+        # Initialize statistics for a new user
+        stats[str(user)] = {1: 0, 2: 0, 3: 0, 'mft': None, 'lft': None}
+
+    # Update the transaction count for the user
+    stats[str(user)][transaction] += 1
+
+# Update the most frequent and least frequent transactions
+for user, user_stats in stats.items():
+    transactions_counts = user_stats.copy()
+    transactions_counts.pop('mft', None)
+    transactions_counts.pop('lft', None)
+
+    max_count = max(transactions_counts.values(), default=None)
+    min_count = min(transactions_counts.values(), default=None)
+
+    most_frequent_transaction = next((t for t, count in transactions_counts.items() if count == max_count), None)
+    least_frequent_transaction = next((t for t, count in transactions_counts.items() if count == min_count), None)
+
+    user_stats['mft'] = most_frequent_transaction
+    user_stats['lft'] = least_frequent_transaction
+
+# Print the user statistics dictionary
+print("stats =", stats)
