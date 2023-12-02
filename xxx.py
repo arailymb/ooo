@@ -128,8 +128,7 @@ class Episode:
         print(f"Episode {self.episode}: {self.name}, Air Date: {self.air_date}")
 
 
-for episode_obj in episode_objects:
-    episode_obj.display_info()
+
 
 # 2.9
 character_id = 1
@@ -170,7 +169,7 @@ random_character_object = Character(
     episodes=random_character_data["episode"]
 )
 
-# 2.12 C
+# 2.12 
 class Character:
     def __init__(self, id, name, status, species, type, gender, origin, location, image, episodes):
         self.id = id
@@ -187,9 +186,5 @@ class Character:
     def display_info(self):
         print(f"Character: {self.name}, Status: {self.status}, Species: {self.species}")
 
-random_character_object.display_info()
 
-# 2.13 
-print("Results:")
-print("Task 1 completed successfully!")
-print("Task 2 completed successfully!")
+
