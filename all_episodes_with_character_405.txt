@@ -1,0 +1,4 @@
+https://rickandmortyapi.com/api/episode/2
+https://rickandmortyapi.com/api/episode/8
+https://rickandmortyapi.com/api/episode/10
+https://rickandmortyapi.com/api/episode/11
